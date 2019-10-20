@@ -4,7 +4,7 @@ declare class HTTPResponseError extends Error {
    */
   public constructor(
     res: import('request').Response,
-    message: string
+    message?: string
   );
   
   public status : number;

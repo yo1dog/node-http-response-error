@@ -7,25 +7,31 @@ HTTP Response Error
 ```javascript
 const HTTPResponseError = require('@yo1dog/http-response-error');
 
-new HTTPResponseError(404, `Document with id '${id}' does not exist.`);
+const res = await request('https://www.example.com/fubar');
+if (res.statusCode !== 200) {
+  throw new HTTPResponseError(res, `Unable to get fubar.`);
+}
 ```
 
 
 # Docs
 
-## `new HTTPResponseError(status, message, [{[code], [details]}])`
+## `new HTTPResponseError(res, [message])`
 
- param    | type   | description
-----------|--------|-------------
-`status`  | number | Status code.
-`message` | string | A human-readable description of the error.
-`code`    | string | Error code.
+ param    | type     | description
+----------|----------|-------------
+`res`     | Response | Response object.
+`message` | string   | A human-readable description of the error.
 
 
 -----
 
-## `CError.status`
+## `HTTPResponseError.status`
 
-## `CError.message`
+## `HTTPResponseError.bodyObj`
 
-## `CError.code`
+## `HTTPResponseError.bodyStr`
+
+## `HTTPResponseError.res`
+
+## `HTTPResponseError.req`
