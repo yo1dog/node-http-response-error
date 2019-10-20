@@ -1,6 +1,6 @@
 {
   "name": "@yo1dog/http-response-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HTTP Response Error",
   "main": "lib/HTTPResponseError.js",
   "types": "lib/HTTPResponseError.d.ts",

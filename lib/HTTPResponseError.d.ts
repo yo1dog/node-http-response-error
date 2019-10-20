@@ -18,4 +18,4 @@ declare class HTTPResponseError extends Error {
   };
 }
 
-export = APIError;
+export = HTTPResponseError;
